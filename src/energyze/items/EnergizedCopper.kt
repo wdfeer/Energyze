@@ -15,37 +15,33 @@ class EnergizedCopper : Item("energized-copper", Color.valueOf("df9d73")) {
     }
 
     fun addAmmo() {
-        (Blocks.duo as ItemTurret).ammoTypes.put(this, object : BasicBulletType(2.75f, 20f) {
-            init {
-                width = 7f
-                height = 9f
-                lifetime = 60f
-                ammoMultiplier = 2f
+        (Blocks.duo as ItemTurret).ammoTypes.put(this, BasicBulletType(2.75f, 20f).apply {
+            width = 7f
+            height = 9f
+            lifetime = 60f
+            ammoMultiplier = 2f
 
-                reloadMultiplier = 1.5f
+            reloadMultiplier = 1.5f
 
-                lightningDamage = 6f
-                lightning = 3
-                lightningLength = 6
-            }
+            lightningDamage = 6f
+            lightning = 3
+            lightningLength = 6
         })
 
-        (Blocks.scatter as ItemTurret).ammoTypes.put(this, object : FlakBulletType(4.2f, 11f) {
-            init {
-                lifetime = 60f
-                ammoMultiplier = 4f
-                shootEffect = Fx.shootSmall
-                width = 6f
-                height = 8f
-                hitEffect = Fx.flakExplosion
-                splashDamage = 12f * 1.5f
-                splashDamageRadius = 8f
+        (Blocks.scatter as ItemTurret).ammoTypes.put(this, FlakBulletType(4.2f, 11f).apply {
+            lifetime = 60f
+            ammoMultiplier = 4f
+            shootEffect = Fx.shootSmall
+            width = 6f
+            height = 8f
+            hitEffect = Fx.flakExplosion
+            splashDamage = 12f * 1.5f
+            splashDamageRadius = 8f
 
-                lightning = 2
-                lightningLength = 8
+            lightning = 2
+            lightningLength = 8
 
-                reloadMultiplier = 1.2f
-            }
+            reloadMultiplier = 1.2f
         })
     }
 }
