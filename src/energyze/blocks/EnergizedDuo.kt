@@ -3,10 +3,12 @@ package energyze.blocks
 import energyze.ModItems
 import mindustry.content.Blocks
 import mindustry.content.Fx
+import mindustry.entities.part.RegionPart
 import mindustry.entities.pattern.ShootAlternate
 import mindustry.type.Category
 import mindustry.type.ItemStack
 import mindustry.world.blocks.defense.turrets.ItemTurret
+import mindustry.world.draw.DrawTurret
 
 class EnergizedDuo : ItemTurret("energized-duo") {
     init {
@@ -18,7 +20,18 @@ class EnergizedDuo : ItemTurret("energized-duo") {
         shoot = ShootAlternate(3.5f).apply { shots = 2 }
 
         recoils = 2
-        drawer = duo.drawer
+        drawer = DrawTurret().apply {
+            for (i in 0..1) {
+                parts.add(object : RegionPart("-barrel-" + (if (i == 0) "l" else "r")) {
+                    init {
+                        progress = PartProgress.recoil
+                        recoilIndex = i
+                        under = true
+                        moveY = -1.5f
+                    }
+                })
+            }
+        }
 
         recoil = 0.5f
         shootY = 3f
