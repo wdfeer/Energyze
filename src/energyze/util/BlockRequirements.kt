@@ -1,4 +1,4 @@
-package zeus.util
+package energyze.util
 
 import mindustry.type.Item
 import mindustry.type.ItemStack

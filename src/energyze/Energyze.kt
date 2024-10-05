@@ -1,9 +1,10 @@
-package zeus
+package energyze
 
 import mindustry.mod.Mod
 
-class Zeus : Mod(){
+class Energyze : Mod(){
     override fun loadContent() {
+        ModItems
         ModBlocks
     }
 }
