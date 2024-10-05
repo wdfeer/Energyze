@@ -1,7 +1,9 @@
 package energyze
 
+import energyze.blocks.CopperEnergizer
+
 object ModBlocks {
     init {
-        // TODO
+        CopperEnergizer()
     }
 }
