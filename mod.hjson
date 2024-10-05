@@ -11,7 +11,7 @@ author: "wdfeer"
 main: "energyze.Energyze"
 
 #the mod description as seen in the mod dialog
-description: "A Mindustry Kotlin mod letting you energize copper."
+description: "Mindustry Kotlin mod letting you energize copper."
 
 #the mod version
 version: 0.1
