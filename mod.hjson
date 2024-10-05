@@ -1,20 +1,20 @@
 #the mod name as displayed in-game
-displayName: "Zeus"
+displayName: "Energyze"
 
 #the internal name of your mod
-name: "zeus"
+name: "energyze"
 
 #your name
 author: "wdfeer"
 
 #the fully qualified main class of the mod
-main: "zeus.Zeus"
+main: "energyze.Energyze"
 
 #the mod description as seen in the mod dialog
-description: "A Mindustry Kotlin mod adding bigger arcs."
+description: "A Mindustry Kotlin mod letting you energize copper."
 
 #the mod version
-version: 0.2
+version: 0.1
 
 #the minimum game build required to run this mod
 minGameVersion: 146
