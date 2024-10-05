@@ -13,22 +13,20 @@ class EnergizedDuo : ItemTurret("energized-duo") {
         val duo = Blocks.duo as ItemTurret
 
         requirements(Category.turret, ItemStack.with(ModItems.energizedCopper, 35))
-        ammoTypes = duo.ammoTypes.copy().onEach {
-            it.value = it.value.copy().apply { damage *= 2f }
-        }
+        ammoTypes = duo.ammoTypes.copy()
 
-        shoot = ShootAlternate(3.5f)
+        shoot = ShootAlternate(3.5f).apply { shots = 2 }
 
         recoils = 2
         drawer = duo.drawer
 
         recoil = 0.5f
         shootY = 3f
-        reload = 10f
-        range = duo.range * 2f
-        shootCone = 15f
+        reload = duo.reload / 1.5f
+        range = duo.range * 1.35f
+        shootCone = duo.shootCone * 1.35f
         ammoUseEffect = Fx.casing1
-        health = 300
+        health = 360
         inaccuracy = 2f
         rotateSpeed = 10f
         coolant = consumeCoolant(0.2f)

@@ -6,5 +6,7 @@ class Energyze : Mod(){
     override fun loadContent() {
         ModItems
         ModBlocks
+
+        ModItems.energizedCopper.addAsDuoAmmo()
     }
 }

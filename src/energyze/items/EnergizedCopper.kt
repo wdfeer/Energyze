@@ -9,8 +9,10 @@ import mindustry.world.blocks.defense.turrets.ItemTurret
 class EnergizedCopper : Item("energized-copper", Color.valueOf("df9d73")) {
     init {
         cost = 1.1f
+    }
 
-        (Blocks.duo as ItemTurret).ammoTypes.put(this, object : BasicBulletType(2.75f, 24f) {
+    fun addAsDuoAmmo() {
+        (Blocks.duo as ItemTurret).ammoTypes.put(this, object : BasicBulletType(2.75f, 20f) {
             init {
                 width = 7f
                 height = 9f
@@ -20,8 +22,8 @@ class EnergizedCopper : Item("energized-copper", Color.valueOf("df9d73")) {
                 reloadMultiplier = 1.5f
 
                 lightningDamage = 6f
-                lightning = 2
-                lightningLength = 8
+                lightning = 3
+                lightningLength = 6
             }
         })
     }
