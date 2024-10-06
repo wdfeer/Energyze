@@ -1,8 +1,6 @@
 package energyze
 
-import energyze.blocks.CopperDischarger
-import energyze.blocks.CopperEnergizer
-import energyze.blocks.EnergizedDuo
+import energyze.blocks.*
 
 object ModBlocks {
     init {
@@ -10,5 +8,7 @@ object ModBlocks {
         CopperDischarger()
 
         EnergizedDuo()
+        EnergizedScorch()
+        EnergizedHail()
     }
 }
