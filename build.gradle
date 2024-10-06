@@ -83,3 +83,15 @@ tasks.register("deploy", Jar) {
         }
     }
 }
+
+tasks.register("fetchClient") {
+    // TODO: download https://github.com/Anuken/Mindustry/releases/download/v146/Mindustry.jar into ./run/Mindustry.jar
+}
+
+tasks.register("runClient") {
+    dependsOn "fetchClient"
+    dependsOn "jar"
+
+    // TODO: put jar into ./run/mods
+    // TODO: then execute ./run/Mindustry.jar with MINDUSTRY_DATA_DIR="./run"
+}
