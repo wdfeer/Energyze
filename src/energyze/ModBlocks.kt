@@ -6,6 +6,7 @@ object ModBlocks {
     init {
         CopperEnergizer()
         CopperDischarger()
+        EnergizedDrill()
 
         EnergizedDuo()
         EnergizedScorch()
