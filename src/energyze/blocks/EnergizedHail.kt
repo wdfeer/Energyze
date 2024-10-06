@@ -8,7 +8,7 @@ import mindustry.type.Category
 import mindustry.type.ItemStack
 import mindustry.world.blocks.defense.turrets.ItemTurret
 
-class EnergizedHail : ItemTurret("energized-scorch") {
+class EnergizedHail : ItemTurret("energized-hail") {
     init {
         val hail = Blocks.hail as ItemTurret
 
