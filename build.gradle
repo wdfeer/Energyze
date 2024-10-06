@@ -1,29 +1,25 @@
-version '1.0'
-
 buildscript{
     repositories{
         mavenCentral()
     }
     
     ext{
-        mindustryVersion = 'v146'
+        mindustryVersion = "v146"
         kotlinVersion = "2.0.20"
         sdkRoot = System.getenv("ANDROID_HOME") ?: System.getenv("ANDROID_SDK_ROOT")
     }
-    
-    dependencies{
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-    }
 }
 
-apply plugin: "kotlin"
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "$kotlinVersion"
+}
 
 sourceSets.main.kotlin.srcDirs = ["src"]
 
 repositories{
     mavenCentral()
     maven{ url "https://raw.githubusercontent.com/Zelaux/MindustryRepo/master/repository" }
-    maven{ url 'https://www.jitpack.io' }
+    maven{ url "https://www.jitpack.io" }
 }
 
 dependencies{
@@ -36,7 +32,7 @@ compileKotlin{
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-tasks.register('jarAndroid') {
+tasks.register("jarAndroid") {
     dependsOn "jar"
 
     doLast {
@@ -72,7 +68,7 @@ jar{
     }
 }
 
-tasks.register('deploy', Jar) {
+tasks.register("deploy", Jar) {
     dependsOn jarAndroid
     dependsOn jar
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
