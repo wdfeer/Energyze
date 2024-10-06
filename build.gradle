@@ -1,3 +1,5 @@
+import java.nio.file.Files
+
 buildscript{
     repositories{
         mavenCentral()
@@ -91,10 +93,21 @@ tasks.register("fetchClient", Download) {
     overwrite false
 }
 
-tasks.register("runClient") {
+tasks.register("runClient", JavaExec) {
     dependsOn "fetchClient"
     dependsOn "jar"
 
-    // TODO: put jar into ./run/mods
-    // TODO: then execute ./run/Mindustry.jar with MINDUSTRY_DATA_DIR="./run"
+    def modFilename = "${project.name}Desktop.jar"
+    doFirst {
+        copy {
+            from("$rootDir/build/libs/$modFilename")
+            into("$rootDir/run/mods")
+            rename { String fileName ->
+                modFilename
+            }
+        }
+    }
+
+    environment "MINDUSTRY_DATA_DIR", "$rootDir/run"
+    classpath files("$rootDir/run/Mindustry.jar")
 }
