@@ -15,8 +15,8 @@ class EnergizedDrill : Drill("energized-drill") {
             else if (it.item == Items.thorium) it.item = Items.phaseFabric
         }.toTypedArray())
 
-        drillTime = blastDrill.drillTime / 3.6f
-        size = 4
+        drillTime = blastDrill.drillTime / 4f
+        size = 3 // size of a laserDrill
         drawRim = true
         tier = 5
         updateEffect = Fx.pulverize
