@@ -17,11 +17,10 @@ class EnergizedDrill : Drill("energized-drill") {
 
         drillTime = blastDrill.drillTime / 4f
         size = 3 // size of a laserDrill
-        drawRim = true
         tier = 5
         updateEffect = Fx.pulverize
         updateEffectChance = 0.02f
-        drillEffect = Fx.mineHuge
+        drillEffect = Fx.mineBig
         rotateSpeed = 6f
         itemCapacity = 50
 
