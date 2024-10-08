@@ -8,5 +8,6 @@ class Energyze : Mod(){
         ModBlocks
 
         ModItems.energizedCopper.addAmmo()
+        ModItems.energizedCoal.addAmmo()
     }
 }
