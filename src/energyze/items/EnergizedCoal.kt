@@ -31,8 +31,7 @@ class EnergizedCoal : Item("energized-coal", Color.valueOf("373727")) {
             keepVelocity = false
             hittable = false
 
-            lightning = 2
-            lightningDamage = 7f
+            lightning = 1
         })
     }
 }
