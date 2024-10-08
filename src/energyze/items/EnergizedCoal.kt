@@ -4,7 +4,9 @@ import arc.graphics.Color
 import mindustry.content.Blocks
 import mindustry.content.Fx
 import mindustry.content.StatusEffects
+import mindustry.entities.bullet.ArtilleryBulletType
 import mindustry.entities.bullet.BulletType
+import mindustry.graphics.Pal
 import mindustry.type.Item
 import mindustry.world.blocks.defense.turrets.ItemTurret
 
@@ -32,6 +34,27 @@ class EnergizedCoal : Item("energized-coal", Color.valueOf("373727")) {
             hittable = false
 
             lightning = 1
+        })
+
+        (Blocks.ripple as ItemTurret).ammoTypes.put(this, ArtilleryBulletType(4f, 15f).apply {
+            hitEffect = Fx.blastExplosion
+            knockback = 0.8f
+            lifetime = 80f
+            width = 13f.also { height = it }
+            collidesTiles = false
+            splashDamageRadius = 25f * 0.75f
+            splashDamage = 20f
+            status = StatusEffects.burning
+            statusDuration = 30f * 12f
+            frontColor = Pal.lightishOrange
+            backColor = Pal.lightOrange
+            makeFire = true
+            trailEffect = Fx.incendTrail
+            ammoMultiplier = 4f
+
+            lightning = 2
+
+            reloadMultiplier = 1.5f
         })
     }
 }
