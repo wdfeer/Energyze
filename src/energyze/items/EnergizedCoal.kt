@@ -49,7 +49,7 @@ class EnergizedCoal : Item("energized-coal", Color.valueOf("373727")) {
             makeFire = true
 
             lightning = 3
-            lightningLength = 15
+            lightningLength = 11
             reloadMultiplier = 1.5f
         })
 
@@ -68,7 +68,7 @@ class EnergizedCoal : Item("energized-coal", Color.valueOf("373727")) {
             makeFire = true
 
             lightning = 3
-            lightningLength = 15
+            lightningLength = 11
             reloadMultiplier = 1.5f
         })
     }
