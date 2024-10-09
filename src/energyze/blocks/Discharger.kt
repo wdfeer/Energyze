@@ -7,15 +7,16 @@ import mindustry.gen.Sounds
 import mindustry.type.Category
 import mindustry.type.ItemStack
 import mindustry.world.blocks.power.ConsumeGenerator
+import mindustry.world.consumers.ConsumeItemCharged
 import mindustry.world.draw.DrawDefault
 import mindustry.world.draw.DrawMulti
 import mindustry.world.draw.DrawWarmupRegion
 
 
-class CopperDischarger : ConsumeGenerator("copper-discharger") {
+class Discharger : ConsumeGenerator("discharger") {
     init {
-        requirements(Category.power, ItemStack.with(Items.titanium, 800, ModItems.energizedCopper, 150))
-        itemDuration = 16f
+        requirements(Category.power, ItemStack.with(Items.titanium, 450, Items.silicon, 200, ModItems.energizedCopper, 100))
+        itemDuration = 10f
         powerProduction = CopperEnergizer.POWER_PER_OUTPUT / itemDuration
 
         size = 3
@@ -24,7 +25,7 @@ class CopperDischarger : ConsumeGenerator("copper-discharger") {
         ambientSoundVolume = 0.05f
         generateEffect = Fx.redgeneratespark
 
-        consumeItems(ItemStack(ModItems.energizedCopper, 1))
+        consume(ConsumeItemCharged())
 
         drawer = DrawMulti(DrawDefault(), DrawWarmupRegion())
     }

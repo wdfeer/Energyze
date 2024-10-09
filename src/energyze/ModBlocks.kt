@@ -5,7 +5,7 @@ import energyze.blocks.*
 object ModBlocks {
     init {
         CopperEnergizer()
-        CopperDischarger()
+        Discharger()
         CoalEnergizer()
 
         EnergizedDuo()

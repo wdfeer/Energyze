@@ -11,9 +11,9 @@ import mindustry.world.blocks.defense.turrets.ItemTurret
 
 class EnergizedCoal : Item("energized-coal", Color.valueOf("373727")) {
     init {
-        explosiveness = 0.25f
-        flammability = 1f
-        charge = 0.6f
+        explosiveness = 0.3f
+        flammability = 0.9f
+        charge = 1f
         buildable = false
     }
 
