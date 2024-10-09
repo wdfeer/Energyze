@@ -35,6 +35,22 @@ class EnergizedCoal : Item("energized-coal", Color.valueOf("373727")) {
             lightning = 1
         })
 
+        (Blocks.hail as ItemTurret).ammoTypes.put(this, ArtilleryBulletType(4f, 15f).apply {
+            knockback = 0.8f
+            lifetime = 80f
+            width = 11f.also { height = it }
+            collidesTiles = false
+            splashDamageRadius = 25f * 0.75f
+            splashDamage = 20f
+
+            status = StatusEffects.burning
+            statusDuration = 30f * 12f
+            makeFire = true
+
+            lightning = 2
+            reloadMultiplier = 1.5f
+        })
+
         (Blocks.ripple as ItemTurret).ammoTypes.put(this, ArtilleryBulletType(4f, 15f).apply {
             ammoMultiplier = 3f
             hitEffect = Fx.blastExplosion
