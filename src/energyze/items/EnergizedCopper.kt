@@ -5,13 +5,11 @@ import mindustry.content.Blocks
 import mindustry.content.Fx
 import mindustry.entities.bullet.BasicBulletType
 import mindustry.entities.bullet.FlakBulletType
-import mindustry.type.Item
 import mindustry.world.blocks.defense.turrets.ItemTurret
 
-class EnergizedCopper : Item("energized-copper", Color.valueOf("df9d73")) {
+class EnergizedCopper : EnergizedItem("energized-copper", Color.valueOf("df9d73")) {
     init {
         cost = 1.1f
-        charge = 1f
     }
 
     fun addAmmo() {

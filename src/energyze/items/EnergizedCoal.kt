@@ -6,14 +6,12 @@ import mindustry.content.Fx
 import mindustry.content.StatusEffects
 import mindustry.entities.bullet.ArtilleryBulletType
 import mindustry.entities.bullet.BulletType
-import mindustry.type.Item
 import mindustry.world.blocks.defense.turrets.ItemTurret
 
-class EnergizedCoal : Item("energized-coal", Color.valueOf("373727")) {
+class EnergizedCoal : EnergizedItem("energized-coal", Color.valueOf("373727")) {
     init {
         explosiveness = 0.3f
         flammability = 0.9f
-        charge = 1f
         buildable = false
     }
 
@@ -36,41 +34,31 @@ class EnergizedCoal : Item("energized-coal", Color.valueOf("373727")) {
             lightningLength = 8
         })
 
-        (Blocks.hail as ItemTurret).ammoTypes.put(this, ArtilleryBulletType(4f, 13f).apply {
-            ammoMultiplier = 3f
-            knockback = 0.8f
-            lifetime = 80f
+        (Blocks.hail as ItemTurret).ammoTypes.put(this, getArtilleryBullet().apply {
             width = 11f.also { height = it }
-            collidesTiles = false
-            splashDamageRadius = 25f * 0.75f
-            splashDamage = 20f
-
-            status = StatusEffects.burning
-            statusDuration = 15f * 12f
-            makeFire = true
-
-            lightning = 3
-            lightningLength = 11
-            reloadMultiplier = 1.5f
         })
 
-        (Blocks.ripple as ItemTurret).ammoTypes.put(this, ArtilleryBulletType(4f, 13f).apply {
-            ammoMultiplier = 3f
-            hitEffect = Fx.blastExplosion
-            knockback = 0.8f
-            lifetime = 80f
+        (Blocks.ripple as ItemTurret).ammoTypes.put(this, getArtilleryBullet().apply {
             width = 13f.also { height = it }
-            collidesTiles = false
-            splashDamageRadius = 25f * 0.75f
-            splashDamage = 20f
-
-            status = StatusEffects.burning
-            statusDuration = 15f * 12f
-            makeFire = true
-
-            lightning = 3
-            lightningLength = 11
-            reloadMultiplier = 1.5f
         })
+    }
+
+    private fun getArtilleryBullet(): ArtilleryBulletType = ArtilleryBulletType(4f, 13f).apply {
+        ammoMultiplier = 3f
+        hitEffect = Fx.blastExplosion
+        knockback = 0.8f
+        lifetime = 80f
+
+        collidesTiles = false
+        splashDamageRadius = 25f * 0.75f
+        splashDamage = 20f
+
+        status = StatusEffects.burning
+        statusDuration = 15f * 12f
+        makeFire = true
+
+        lightning = 3
+        lightningLength = 11
+        reloadMultiplier = 1.5f
     }
 }
