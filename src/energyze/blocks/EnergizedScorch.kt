@@ -16,15 +16,15 @@ class EnergizedScorch : ItemTurret("energized-scorch") {
         requirements(Category.turret, ItemStack.with(ModItems.energizedCopper, 25, Items.graphite, 22))
         ammoTypes = scorch.ammoTypes.copy()
         recoil = 0f
-        reload = 4f
+        reload = 4.5f
         coolantMultiplier = 1.5f
-        range = 100f
+        range = 66f
         shootY = 3f
         shootCone = 50f
         targetAir = false
         ammoUseEffect = Fx.none
         health = 560
         shootSound = Sounds.flame
-        coolant = consumeCoolant(0.2f)
+        coolant = consumeCoolant(0.4f)
     }
 }

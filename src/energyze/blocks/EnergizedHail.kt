@@ -18,7 +18,7 @@ class EnergizedHail : ItemTurret("energized-hail") {
         reload = 40f
         recoil = 2f
         range = 275f
-        inaccuracy = 1f
+        inaccuracy = 0.5f
         shootCone = 10f
         health = 400
         shootSound = Sounds.bang

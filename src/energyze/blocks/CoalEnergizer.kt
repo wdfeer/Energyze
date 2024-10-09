@@ -30,7 +30,7 @@ class CoalEnergizer : GenericCrafter("coal-energizer") {
     }
 
     companion object {
-        const val POWER_PER_OUTPUT = 500f
-        const val CRAFT_TIME = 60f
+        const val POWER_PER_OUTPUT = 1000f
+        const val CRAFT_TIME = 120f
     }
 }

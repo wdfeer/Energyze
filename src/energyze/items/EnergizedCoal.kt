@@ -32,10 +32,11 @@ class EnergizedCoal : Item("energized-coal", Color.valueOf("373727")) {
             keepVelocity = false
             hittable = false
 
-            lightning = 1
+            lightning = 2
+            lightningLength = 8
         })
 
-        (Blocks.hail as ItemTurret).ammoTypes.put(this, ArtilleryBulletType(4f, 15f).apply {
+        (Blocks.hail as ItemTurret).ammoTypes.put(this, ArtilleryBulletType(4f, 13f).apply {
             knockback = 0.8f
             lifetime = 80f
             width = 11f.also { height = it }
@@ -44,14 +45,15 @@ class EnergizedCoal : Item("energized-coal", Color.valueOf("373727")) {
             splashDamage = 20f
 
             status = StatusEffects.burning
-            statusDuration = 30f * 12f
+            statusDuration = 15f * 12f
             makeFire = true
 
-            lightning = 2
+            lightning = 3
+            lightningLength = 15
             reloadMultiplier = 1.5f
         })
 
-        (Blocks.ripple as ItemTurret).ammoTypes.put(this, ArtilleryBulletType(4f, 15f).apply {
+        (Blocks.ripple as ItemTurret).ammoTypes.put(this, ArtilleryBulletType(4f, 13f).apply {
             ammoMultiplier = 3f
             hitEffect = Fx.blastExplosion
             knockback = 0.8f
@@ -62,10 +64,11 @@ class EnergizedCoal : Item("energized-coal", Color.valueOf("373727")) {
             splashDamage = 20f
 
             status = StatusEffects.burning
-            statusDuration = 30f * 12f
+            statusDuration = 15f * 12f
             makeFire = true
 
-            lightning = 2
+            lightning = 3
+            lightningLength = 15
             reloadMultiplier = 1.5f
         })
     }
