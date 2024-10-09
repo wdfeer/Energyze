@@ -37,6 +37,7 @@ class EnergizedCoal : Item("energized-coal", Color.valueOf("373727")) {
         })
 
         (Blocks.hail as ItemTurret).ammoTypes.put(this, ArtilleryBulletType(4f, 13f).apply {
+            ammoMultiplier = 3f
             knockback = 0.8f
             lifetime = 80f
             width = 11f.also { height = it }
