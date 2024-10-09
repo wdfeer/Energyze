@@ -28,6 +28,6 @@ class EnergizedSiliconCrucible : GenericCrafter("energized-silicon-crucible") {
         ambientSoundVolume = 0.07f
         outputItem = ItemStack(Items.silicon, 6)
 
-        consumeItems(*ItemStack.with(Items.coal, 3, Items.sand, 3, ModItems.energizedCopper))
+        consumeItems(*ItemStack.with(Items.coal, 3, Items.sand, 3, ModItems.energizedCopper, 1))
     }
 }
