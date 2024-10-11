@@ -7,6 +7,7 @@ object ModBlocks {
         // Factories
         CoalEnergizer()
         CopperEnergizer()
+        ThoriumEnergizer()
         EnergizedSiliconCrucible()
 
         // Power gen
