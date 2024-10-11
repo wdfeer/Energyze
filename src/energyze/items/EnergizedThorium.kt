@@ -3,7 +3,10 @@ package energyze.items
 import arc.graphics.Color
 import mindustry.content.Blocks
 import mindustry.content.Fx
+import mindustry.content.Items
 import mindustry.entities.bullet.BasicBulletType
+import mindustry.entities.bullet.ShrapnelBulletType
+import mindustry.graphics.Pal
 import mindustry.world.blocks.defense.turrets.ItemTurret
 
 class EnergizedThorium : EnergizedItem("energized-thorium", Color.valueOf("f9a3c7")) {
@@ -30,6 +33,20 @@ class EnergizedThorium : EnergizedItem("energized-thorium", Color.valueOf("f9a3c
 
             splashDamage = 16f
             splashDamageRadius = 12f
+        })
+
+        (Blocks.fuse as ItemTurret).ammoTypes.put(Items.thorium, ShrapnelBulletType().apply {
+            length = (Blocks.fuse as ItemTurret).range + 10f
+            damage = 75f
+            ammoMultiplier = 5f
+            toColor = Pal.thoriumPink
+            smokeEffect = Fx.thoriumShoot
+            shootEffect = smokeEffect
+
+            reloadMultiplier = 1.2f
+
+            lightning = 2
+            lightningDamage = 23f
         })
     }
 }
