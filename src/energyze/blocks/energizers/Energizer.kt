@@ -15,7 +15,7 @@ import mindustry.world.draw.DrawMulti
 
 abstract class Energizer(name: String, input: Item, output: Item, requirements: Array<ItemStack>) : GenericCrafter (name) {
     init {
-        this.requirements(Category.production, requirements)
+        this.requirements(Category.crafting, requirements)
         craftEffect = Fx.smeltsmoke
         outputItem = ItemStack(output, 1)
         craftTime = CRAFT_TIME
