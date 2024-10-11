@@ -14,7 +14,7 @@ main: "energyze.Energyze"
 description: "Mindustry Kotlin mod letting you energize copper. Android compatibility WIP."
 
 #the mod version
-version: 0.3.2
+version: 0.4.0
 
 #the minimum game build required to run this mod
 minGameVersion: 146
