@@ -1,4 +1,4 @@
-package energyze.blocks
+package energyze.blocks.turrets
 
 import energyze.ModItems
 import mindustry.content.Blocks

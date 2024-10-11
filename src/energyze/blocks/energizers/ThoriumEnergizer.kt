@@ -1,4 +1,4 @@
-package energyze.blocks
+package energyze.blocks.energizers
 
 import energyze.ModItems
 import mindustry.content.Items

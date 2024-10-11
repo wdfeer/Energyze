@@ -1,4 +1,4 @@
-package energyze.blocks
+package energyze.blocks.energizers
 
 import arc.graphics.Color
 import mindustry.content.Fx
