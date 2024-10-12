@@ -11,17 +11,19 @@ class EnergizedSegment : PointDefenseTurret("energized-segment") {
     init {
         requirements(
             Category.turret,
-            ItemStack.with(Items.silicon, 130, Items.phaseFabric, 60, ModItems.energizedThorium, 60)
+            ItemStack.with(Items.silicon, 180, Items.phaseFabric, 100, ModItems.energizedThorium, 40)
         )
 
-        scaledHealth = 250f
+        scaledHealth = 320f
         range = 240f
         hasPower = true
-        consumePower(12f)
+        consumePower(16f)
         size = 2
         shootLength = 5f
-        bulletDamage = 30f
-        reload = 6f
+        bulletDamage = 90f
+        reload = 4f
+        rotateSpeed *= 2f
+        retargetTime /= 10f
         envEnabled = envEnabled or Env.space
     }
 }
