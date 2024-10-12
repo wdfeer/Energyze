@@ -7,7 +7,8 @@ import energyze.blocks.energizers.ThoriumEnergizer
 import energyze.blocks.turrets.EnergizedDuo
 import energyze.blocks.turrets.EnergizedHail
 import energyze.blocks.turrets.EnergizedScorch
-import energyze.blocks.turrets.EnergizedSiliconCrucible
+import energyze.blocks.EnergizedSiliconCrucible
+import energyze.blocks.turrets.EnergizedSegment
 
 object ModBlocks {
     init {
@@ -24,5 +25,6 @@ object ModBlocks {
         EnergizedDuo()
         EnergizedScorch()
         EnergizedHail()
+        EnergizedSegment()
     }
 }

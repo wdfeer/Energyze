@@ -1,4 +1,4 @@
-package energyze.blocks.turrets
+package energyze.blocks
 
 import arc.graphics.Color
 import energyze.ModItems
