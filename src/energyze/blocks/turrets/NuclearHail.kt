@@ -17,14 +17,14 @@ class NuclearHail : ItemTurret("nuclear-hail") {
     init {
         val foreshadow = Blocks.foreshadow as ItemTurret
 
-        requirements(Category.turret, ItemStack.with(ModItems.energizedCopper, 360, Items.metaglass, 250, ModItems.energizedThorium, 200, Items.surgeAlloy, 120))
+        requirements(Category.turret, ItemStack.with(ModItems.energizedCopper, 360, Items.metaglass, 250, Items.thorium, 200, Items.surgeAlloy, 120))
         ammoTypes = ObjectMap<Item, BulletType>().apply {
             put(ModItems.energizedThorium, getEnergizedThoriumBullet())
         }
         targetAir = false
         recoil = 2f
         shootCone = 1f
-        scaledHealth = 400f
+        scaledHealth = 320f
         shootSound = Sounds.mediumCannon
         limitRange(0f)
 
