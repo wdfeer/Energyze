@@ -3,11 +3,12 @@ package energyze.blocks.turrets
 import arc.struct.ObjectMap
 import energyze.ModItems
 import mindustry.content.Blocks
-import mindustry.content.Fx
 import mindustry.content.Items
 import mindustry.entities.bullet.ArtilleryBulletType
 import mindustry.entities.bullet.BulletType
+import mindustry.entities.effect.ExplosionEffect
 import mindustry.gen.Sounds
+import mindustry.graphics.Pal
 import mindustry.type.Category
 import mindustry.type.Item
 import mindustry.type.ItemStack
@@ -26,7 +27,7 @@ class NuclearHail : ItemTurret("nuclear-hail") {
         shootSound = Sounds.mediumCannon
         limitRange(0f)
 
-        reload = foreshadow.reload * 2.5f
+        reload = foreshadow.reload * 2f
         range = foreshadow.range * 0.8f
         size = 2
         ammoPerShot = 10
@@ -37,30 +38,36 @@ class NuclearHail : ItemTurret("nuclear-hail") {
     }
 
     private fun getAmmo(): ObjectMap<Item, BulletType> = ObjectMap<Item, BulletType>().apply {
-        put(Items.phaseFabric, ArtilleryBulletType(2f, 60f).apply {
+        put(Items.phaseFabric, ArtilleryBulletType(2f, 120f).apply {
             knockback = 1.6f
             lifetime = 160f
-            width = 21f.also { height = it }
+            width = 20f.also { height = it }
             collidesTiles = false
-            splashDamageRadius = 200f
-            splashDamage = 100f
+            splashDamageRadius = 160f
+            splashDamage = 120f
 
-            hitEffect = Fx.blastExplosion
+            hitEffect = ExplosionEffect().apply {
+                waveColor = Pal.surge
+                waveRad = splashDamageRadius
+                waveStroke = 8f
+            }
 
-            lightning = 7
-            lightningLength = 22
-            lightningDamage = 11f
+            reloadMultiplier = 1.5f
         })
 
-        put(ModItems.energizedThorium, ArtilleryBulletType(1.5f, 80f).apply {
+        put(ModItems.energizedThorium, ArtilleryBulletType(1.5f, 200f).apply {
             knockback = 1.6f
             lifetime = 160f
-            width = 18f.also { height = it }
+            width = 20f.also { height = it }
             collidesTiles = false
             splashDamageRadius = 100f
-            splashDamage = 130f
+            splashDamage = 200f
 
-            hitEffect = Fx.blastExplosion
+            hitEffect = ExplosionEffect().apply {
+                waveColor = Pal.surge
+                waveRad = splashDamageRadius
+                waveStroke = 6f
+            }
 
             lightning = 6
             lightningLength = 11
