@@ -18,9 +18,7 @@ class NuclearHail : ItemTurret("nuclear-hail") {
         val foreshadow = Blocks.foreshadow as ItemTurret
 
         requirements(Category.turret, ItemStack.with(ModItems.energizedCopper, 360, Items.metaglass, 250, Items.thorium, 200, Items.surgeAlloy, 120))
-        ammoTypes = ObjectMap<Item, BulletType>().apply {
-            put(ModItems.energizedThorium, getEnergizedThoriumBullet())
-        }
+        ammoTypes = getAmmo()
         targetAir = false
         recoil = 2f
         shootCone = 1f
@@ -38,8 +36,23 @@ class NuclearHail : ItemTurret("nuclear-hail") {
         coolant = consumeCoolant(0.5f)
     }
 
-    private fun getEnergizedThoriumBullet(): ArtilleryBulletType {
-        return ArtilleryBulletType(1.5f, 80f).apply {
+    private fun getAmmo(): ObjectMap<Item, BulletType> = ObjectMap<Item, BulletType>().apply {
+        put(Items.phaseFabric, ArtilleryBulletType(2f, 60f).apply {
+            knockback = 1.6f
+            lifetime = 160f
+            width = 21f.also { height = it }
+            collidesTiles = false
+            splashDamageRadius = 200f
+            splashDamage = 100f
+
+            hitEffect = Fx.blastExplosion
+
+            lightning = 7
+            lightningLength = 22
+            lightningDamage = 11f
+        })
+
+        put(ModItems.energizedThorium, ArtilleryBulletType(1.5f, 80f).apply {
             knockback = 1.6f
             lifetime = 160f
             width = 18f.also { height = it }
@@ -52,6 +65,6 @@ class NuclearHail : ItemTurret("nuclear-hail") {
             lightning = 6
             lightningLength = 11
             lightningDamage = 30f
-        }
+        })
     }
 }
