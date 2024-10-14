@@ -7,7 +7,7 @@ import mindustry.type.ItemStack
 import mindustry.world.blocks.defense.turrets.PointDefenseTurret
 import mindustry.world.meta.Env
 
-class EnergizedSegment : PointDefenseTurret("energized-segment") {
+class NuclearSegment : PointDefenseTurret("nuclear-segment") {
     init {
         requirements(
             Category.turret,
