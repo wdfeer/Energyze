@@ -24,5 +24,8 @@ object ModBlocks {
         EnergizedHail()
         NuclearSegment()
         NuclearHail()
+
+        // Unit
+        UnitEnergizer()
     }
 }
