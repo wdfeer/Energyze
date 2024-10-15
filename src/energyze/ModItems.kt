@@ -8,4 +8,10 @@ object ModItems {
     val energizedCoal = EnergizedCoal()
     val energizedCopper = EnergizedCopper()
     val energizedThorium = EnergizedThorium()
+
+    fun initAmmo() {
+        energizedCopper.addAmmo()
+        energizedCoal.addAmmo()
+        energizedThorium.addAmmo()
+    }
 }

@@ -6,9 +6,6 @@ class Energyze : Mod(){
     override fun loadContent() {
         ModItems
         ModBlocks
-
-        ModItems.energizedCopper.addAmmo()
-        ModItems.energizedCoal.addAmmo()
-        ModItems.energizedThorium.addAmmo()
+        ModItems.initAmmo()
     }
 }
