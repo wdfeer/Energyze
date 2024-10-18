@@ -8,11 +8,11 @@ import mindustry.world.blocks.defense.ShieldWall
 
 class EnergizedCopperWallLarge : ShieldWall("energized-copper-wall-large") {
     init {
-        val copperWallLarge = Blocks.copperWallLarge
+        val copperWall = Blocks.copperWall
 
-        requirements(Category.defense, ItemStack.mult(ModBlocks.energizedCopperWall.requirements, 4f))
-        health = copperWallLarge.health
-        size = 2
-        shieldHealth = 400f
+        requirements(Category.defense, ItemStack.mult(ModBlocks.energizedCopperWall.requirements, 9f / 4f))
+        size = 3
+        scaledHealth = copperWall.health.toFloat()
+        shieldHealth = 100f * size * size
     }
 }

@@ -11,8 +11,9 @@ class EnergizedCopperWall : ShieldWall("energized-copper-wall") {
     init {
         val copperWall = Blocks.copperWall
 
-        requirements(Category.defense, ItemStack.with(ModItems.energizedCopper, 6, Items.silicon, 1))
-        health = copperWall.health
-        shieldHealth = 100f
+        requirements(Category.defense, ItemStack.with(ModItems.energizedCopper, 24, Items.silicon, 4))
+        size = 2
+        scaledHealth = copperWall.health.toFloat()
+        shieldHealth = 100f * size * size
     }
 }
