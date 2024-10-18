@@ -14,6 +14,6 @@ class EnergizedCopperWall : ShieldWall("energized-copper-wall") {
         requirements(Category.defense, ItemStack.with(ModItems.energizedCopper, 24, Items.silicon, 4))
         size = 2
         scaledHealth = copperWall.health.toFloat()
-        shieldHealth = 100f * size * size
+        shieldHealth = 150f * size * size
     }
 }
