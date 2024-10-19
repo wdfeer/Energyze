@@ -6,8 +6,7 @@ import energyze.blocks.energizers.CopperEnergizer
 import energyze.blocks.energizers.ThoriumEnergizer
 import energyze.blocks.EnergizedSiliconCrucible
 import energyze.blocks.turrets.*
-import energyze.blocks.walls.EnergizedCopperWall
-import energyze.blocks.walls.EnergizedCopperWallLarge
+import energyze.blocks.walls.EnergizedWalls
 
 object ModBlocks {
     init {
@@ -26,8 +25,7 @@ object ModBlocks {
         EnergizedHail()
         NuclearSegment()
         NuclearHail()
-    }
 
-    val energizedCopperWall = EnergizedCopperWall()
-    val energizedCopperWallLarge = EnergizedCopperWallLarge()
+        EnergizedWalls
+    }
 }
