@@ -17,9 +17,11 @@ import kotlin.math.pow
 class NuclearDuo : ItemTurret("nuclear-duo") {
     init {
         size = 2
+        consumePower(6f)
+
         val duo = Blocks.duo as ItemTurret
 
-        requirements(Category.turret, ItemStack.with(ModItems.energizedCopper, 140, ModItems.energizedThorium, 50))
+        requirements(Category.turret, ItemStack.with(ModItems.energizedCopper, 140, ModItems.energizedThorium, 50, Items.surgeAlloy, 35))
         ammo(
             Items.copper, object : BasicBulletType(3f, modifyDamage(9f)) {
                 init {

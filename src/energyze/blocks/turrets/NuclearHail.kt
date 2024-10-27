@@ -18,7 +18,7 @@ class NuclearHail : ItemTurret("nuclear-hail") {
     init {
         val foreshadow = Blocks.foreshadow as ItemTurret
 
-        requirements(Category.turret, ItemStack.with(ModItems.energizedCopper, 360, Items.metaglass, 250, Items.thorium, 200, Items.surgeAlloy, 120))
+        requirements(Category.turret, ItemStack.with(ModItems.energizedCopper, 240, ModItems.energizedThorium, 130, Items.surgeAlloy, 70))
         ammoTypes = getAmmo()
         targetAir = false
         recoil = 2f

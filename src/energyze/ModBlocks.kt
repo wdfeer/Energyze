@@ -24,8 +24,8 @@ object ModBlocks {
         EnergizedScorch()
         EnergizedHail()
         NuclearDuo()
-        NuclearSegment()
         NuclearHail()
+        NuclearSegment()
 
         EnergizedWalls
     }
