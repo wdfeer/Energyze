@@ -23,6 +23,7 @@ object ModBlocks {
         EnergizedDuo()
         EnergizedScorch()
         EnergizedHail()
+        EnergizedLancer()
         NuclearDuo()
         NuclearHail()
         NuclearSegment()
