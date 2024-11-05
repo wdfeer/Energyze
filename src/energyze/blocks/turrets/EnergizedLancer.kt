@@ -2,27 +2,22 @@ package energyze.blocks.turrets
 
 import arc.graphics.Color
 import energyze.ModItems
-import mindustry.content.Blocks
 import mindustry.content.Fx
 import mindustry.content.Items
 import mindustry.entities.bullet.LaserBulletType
 import mindustry.entities.effect.MultiEffect
 import mindustry.entities.pattern.ShootAlternate
-import mindustry.entities.pattern.ShootPattern
 import mindustry.gen.Sounds
 import mindustry.graphics.Pal
 import mindustry.type.Category
 import mindustry.type.ItemStack
-import mindustry.world.blocks.defense.turrets.ItemTurret
 import mindustry.world.blocks.defense.turrets.PowerTurret
 
 class EnergizedLancer : PowerTurret("energized-lancer") {
     init {
-        val lancer = Blocks.lancer as ItemTurret
-
         requirements(
             Category.turret,
-            ItemStack.with(ModItems.energizedCopper, 60, Items.lead, 70, Items.silicon, 60, Items.titanium, 30)
+            ItemStack.with(ModItems.energizedCopper, 120, Items.lead, 90, Items.silicon, 70, Items.titanium, 35)
         )
         range = 165f * 1.2f
 
