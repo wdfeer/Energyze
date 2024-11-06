@@ -19,7 +19,7 @@ class NuclearLancer : PowerTurret("nuclear-lancer") {
     init {
         requirements(
             Category.turret,
-            ItemStack.with(ModItems.energizedCopper, 100, Items.lead, 150, Items.silicon, 110, ModItems.energizedThorium, 50, Items.surgeAlloy, 25)
+            ItemStack.with(Items.lead, 210, Items.silicon, 190, ModItems.energizedCopper, 120, ModItems.energizedThorium, 100, Items.surgeAlloy, 85)
         )
         range = (Blocks.foreshadow as Turret).range * 0.7f
 
