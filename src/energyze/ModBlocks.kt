@@ -27,6 +27,7 @@ object ModBlocks {
         NuclearDuo()
         NuclearHail()
         NuclearSegment()
+        NuclearLancer()
 
         EnergizedWalls
     }
