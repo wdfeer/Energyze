@@ -19,12 +19,12 @@ class NuclearLancer : PowerTurret("nuclear-lancer") {
     init {
         requirements(
             Category.turret,
-            ItemStack.with(Items.lead, 210, Items.silicon, 190, ModItems.energizedCopper, 120, ModItems.energizedThorium, 100, Items.surgeAlloy, 85)
+            ItemStack.with(Items.lead, 540, Items.silicon, 250, ModItems.energizedCopper, 150, ModItems.energizedThorium, 120, Items.surgeAlloy, 100)
         )
-        range = (Blocks.foreshadow as Turret).range * 0.7f
+        range = (Blocks.foreshadow as Turret).range * 0.68f
 
-        recoil = 8f
-        reload = 80f * 2.5f
+        recoil = 3f
+        reload = 80f * 2.25f
         shake = 4f
         shootEffect = Fx.lancerLaserShoot
         smokeEffect = Fx.none
@@ -36,25 +36,24 @@ class NuclearLancer : PowerTurret("nuclear-lancer") {
         accurateDelay = false
         shootSound = Sounds.laserblast
         coolant = consumeCoolant(1f)
-        coolantMultiplier /= 3
+        coolantMultiplier /= 6
 
         consumePower(36f)
 
-        shoot = ShootSpread(3, 1.25f)
+        shoot = ShootSpread(3, 1.5f)
 
-        shootType = LaserBulletType(140f * 1.75f).apply {
+        shootType = LaserBulletType(256f).apply {
             colors = arrayOf(Pal.lancerLaser.cpy().a(0.4f), Pal.lancerLaser, Color(1f, 1f, 1f).mul(Color.pink))
             chargeEffect = MultiEffect(Fx.lancerLaserCharge, Fx.lancerLaserChargeBegin)
 
             buildingDamageMultiplier = 0.25f
             hitEffect = Fx.hitLancer
-            hitSize = 4f
+            hitSize = 6f
             lifetime = 16f * 1.1f
             drawSize = 400f * 2f
             collidesAir = true
-            length = this@NuclearLancer.range + 10f
-            ammoMultiplier = 1f
-            pierceCap = 6
+            length = this@NuclearLancer.range + 8f
+            pierceCap = 3
         }
     }
 }
