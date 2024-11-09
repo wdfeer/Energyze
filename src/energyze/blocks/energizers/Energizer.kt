@@ -26,7 +26,7 @@ abstract class Energizer(name: String, input: Item, output: Item, requirements: 
         ambientSound = Sounds.techloop
         ambientSoundVolume = 0.02f
 
-        consumeItems(ItemStack(input, 2))
+        consumeItems(ItemStack(input, 3))
         consumePower(POWER_PER_OUTPUT / CRAFT_TIME)
     }
 
