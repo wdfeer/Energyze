@@ -11,7 +11,7 @@ author: "wdfeer"
 main: "energyze.Energyze"
 
 #the mod description as seen in the mod dialog
-description: "Mindustry Kotlin mod adding energized materials. Android compatibility WIP."
+description: "Mindustry Kotlin mod adding energized materials."
 
 #the mod version
 version: 0.5.4
